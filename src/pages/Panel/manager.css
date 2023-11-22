@@ -1,0 +1,5 @@
+.manager-item {
+  @apply flex gap-2 items-center
+   bg-slate-100 p-4 hover:bg-slate-200 transition-all
+   hover:pl-6 cursor-pointer;
+}

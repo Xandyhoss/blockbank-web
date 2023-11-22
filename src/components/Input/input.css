@@ -1,0 +1,18 @@
+.input-label {
+  @apply text-xs font-bold p-0 mb-[-8px] transition-all;
+  opacity: 0.6;
+}
+
+.input-label-active {
+  opacity: 1;
+}
+
+.input-field {
+  @apply h-max p-2 pl-0 border-b border-b-slate-950
+  border-opacity-60 focus:outline-none
+  focus:border-b-blue-500 transition-colors;
+}
+
+.error {
+  @apply border-b-red-600;
+}

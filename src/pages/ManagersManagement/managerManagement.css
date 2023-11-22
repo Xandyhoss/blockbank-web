@@ -1,0 +1,8 @@
+.manager-management-item {
+  @apply bg-slate-100 hover:bg-slate-200 w-full h-14 flex items-center
+    p-4 justify-between transition-all;
+}
+
+.manager-management-icon {
+  @apply transition-all hover:text-dukeBlue-800 text-xl cursor-pointer;
+}

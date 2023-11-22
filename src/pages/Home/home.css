@@ -1,0 +1,29 @@
+.copied {
+  @apply !bg-green-600 hover:!bg-green-600 !transition-all !duration-500;
+}
+
+.home-container {
+  @apply text-black min-w-[100%] h-[100%] min-h-[100%] flex flex-col md:flex-row gap-4;
+}
+
+.lateral-nav {
+  @apply bg-white w-72 min-w-max 
+  h-max md:flex md:flex-col hidden items-center gap-4 py-6 rounded-md;
+}
+
+.content {
+  @apply bg-white w-[100%] h-[100%] min-h-[80%] rounded-md p-4;
+}
+
+.lateral-menu {
+  @apply w-full px-4;
+}
+
+.separator {
+  @apply border border-b-[1px] border-slate-300 w-full;
+}
+
+.lateral-menu-item {
+  @apply hover:bg-slate-100 text-lg transition-all duration-500
+  cursor-pointer bg-transparent hover:pl-3 hover:text-dukeBlue-800;
+}

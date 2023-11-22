@@ -1,0 +1,32 @@
+.card {
+  @apply w-full h-32 p-4 flex flex-col justify-between
+   bg-slate-100 rounded-md;
+}
+
+.card-title {
+  @apply text-dukeBlue-800 font-bold;
+}
+
+.card-value {
+  @apply font-bold text-dukeBlue-800 text-3xl self-end;
+}
+
+.horizontal-nav {
+  @apply flex bg-slate-100 justify-center flex-wrap md:flex-auto;
+}
+
+.horizontal-nav-item {
+  @apply hover:bg-slate-200 p-3 transition-all
+    hover:scale-[1.05] text-sm md:text-base hover:text-black cursor-pointer;
+}
+
+.selected-item {
+  @apply bg-dukeBlue-800 hover:bg-dukeBlue-800
+  hover:text-white text-white font-bold;
+}
+
+.history-item {
+  @apply bg-slate-100 w-full h-14 flex md:grid md:grid-cols-3 items-center
+  p-4 justify-between hover:border-b-4 border-spacing-56
+  border-b-slate-300 transition-all cursor-pointer md:text-base text-sm;
+}

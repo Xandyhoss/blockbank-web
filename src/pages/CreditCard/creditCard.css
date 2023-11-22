@@ -1,0 +1,33 @@
+.cc-message {
+  @apply px-8 text-center w-full flex justify-center font-bold;
+}
+
+.cc-content {
+  @apply grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-2;
+}
+
+.cc-block {
+  @apply w-full h-64 bg-dukeBlue-800
+        rounded-lg relative;
+}
+
+.cc-copy-button {
+  @apply absolute top-[10%] right-[5%] bg-white rounded-[100%]
+            w-10 h-10 flex items-center justify-center
+            hover:bg-slate-200 transition-all cursor-pointer
+            text-dukeBlue-800 duration-300;
+}
+
+.cc-copied {
+  @apply bg-green-500 text-white transition-all duration-300;
+}
+
+.cc-details {
+  @apply flex flex-col left-[5%]
+          bottom-[10%] absolute gap-1;
+}
+
+.cc-limits {
+  @apply w-full h-auto bg-slate-100 rounded-lg flex
+          flex-col justify-between p-2;
+}

@@ -1,0 +1,23 @@
+.button {
+  @apply text-blue-50 h-auto w-max py-2 px-2 md:px-8
+    transition-all flex justify-center items-center gap-2
+    rounded-md relative;
+}
+
+.primary {
+  @apply bg-blue-500 hover:bg-blue-800 active:bg-blue-600;
+}
+
+.secondary {
+  @apply bg-transparent text-dukeBlue-800 border
+  border-dukeBlue-800 hover:bg-slate-200
+  active:bg-slate-300;
+}
+
+.submitting {
+  @apply bg-opacity-60 hover:bg-opacity-60 cursor-wait;
+}
+
+.overlay {
+  @apply absolute animate-spin;
+}

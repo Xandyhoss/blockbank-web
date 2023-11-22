@@ -1,0 +1,29 @@
+@keyframes square1animate {
+  0% {
+    top: 0;
+    left: 0%;
+  }
+  25% {
+    top: 0%;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+    transform: translateX(-100%) translateY(-100%);
+  }
+  75% {
+    top: 100%;
+    left: 0%;
+    transform: translateY(-100%);
+  }
+  100% {
+    top: 0%;
+    left: 0%;
+  }
+}
+
+.square1 {
+  @apply absolute animate-[square1animate_2s_ease-in-out_infinite];
+}
