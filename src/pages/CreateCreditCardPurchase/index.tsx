@@ -1,21 +1,34 @@
 import { useForm } from "react-hook-form";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import { useNavigate } from "react-router-dom";
-import { createNewTransferency } from "../../services/Transfers";
+import { useLocation, useNavigate } from "react-router-dom";
+import { createNewCreditCardPurchase } from "../../services/CreditCard";
+import { useEffect } from "react";
 
-const CreateTransferency: React.FC = () => {
+const CreateCreditCardPurchase: React.FC = () => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<MakeTransferPayload>();
+  } = useForm<CreateCreditCardPurchasePayload>();
   const navigate = useNavigate();
+  const { state } = useLocation();
 
-  const createTransferencySubmit = async (data: MakeTransferPayload) => {
-    const response = await createNewTransferency(data);
+  useEffect(() => {
+    if (state === null) {
+      navigate("/creditCard");
+    }
+  }, [navigate, state]);
+
+  const createTransferencySubmit = async (
+    data: CreateCreditCardPurchasePayload
+  ) => {
+    const response = await createNewCreditCardPurchase({
+      ...data,
+      creditCardKey: state.creditCardKey,
+    });
     if (response) {
-      navigate("/");
+      navigate("/creditCard");
       return;
     }
   };
@@ -24,8 +37,8 @@ const CreateTransferency: React.FC = () => {
     <div className="flex flex-col gap-4">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <i className="fas fa-money-bill-transfer" />
-          <h2 className="text-2xl">Create transferency</h2>
+          <i className="fas fa-dollar-sign" />
+          <h2 className="text-2xl">Create credit card purchase</h2>
         </div>
       </div>
       <form
@@ -33,17 +46,17 @@ const CreateTransferency: React.FC = () => {
         onSubmit={handleSubmit(createTransferencySubmit)}
       >
         <Input
-          label="Receiver key"
-          placeholder="Receiver key"
+          label="Purchase description"
+          placeholder="Purchase description"
           step={0.01}
-          {...register("receiverKey", {
+          {...register("description", {
             required: "Required field",
           })}
-          errors={errors.receiverKey}
+          errors={errors.description}
         />
         <Input
-          label="Trasnferency value"
-          placeholder="Transferency value"
+          label="Purchase value"
+          placeholder="Purchase value"
           type="number"
           step={0.01}
           {...register("value", {
@@ -55,8 +68,8 @@ const CreateTransferency: React.FC = () => {
         <Button
           className="col-start-2 row-start-2 justify-self-end"
           type="submit"
-          title="Create transferency"
-          icon="fas fa-money-bill-transfer"
+          title="Create purchase"
+          icon="fas fa-dollar-sign"
           submitting={isSubmitting}
         />
       </form>
@@ -64,4 +77,4 @@ const CreateTransferency: React.FC = () => {
   );
 };
 
-export default CreateTransferency;
+export default CreateCreditCardPurchase;

@@ -255,17 +255,38 @@ const CreditCard: React.FC = () => {
                 <div className="flex flex-col items-end">
                   <div className="font-bold text-sm">Limit used</div>
                   <div className="text-red-500 text-3xl font-bold">
-                    R$ {creditCard?.limitUsed}
+                    R$ {creditCard?.limitUsed.toLocaleString()}
                   </div>
                 </div>
                 <div className="flex flex-col items-end">
                   <div className="font-bold text-sm">Limit available</div>
                   <div className="text-green-600 text-3xl font-bold">
-                    R$ {creditCard?.limit - creditCard?.limitUsed}
+                    R${" "}
+                    {(
+                      creditCard?.limit - creditCard?.limitUsed
+                    ).toLocaleString()}
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="w-full flex gap-2 justify-end">
+            <Button
+              title="Create Purchase"
+              icon="fas fa-dollar-sign"
+              onClick={() =>
+                navigate("/creditCard/create-purchase", {
+                  state: {
+                    creditCardKey: creditCard["@key"],
+                  },
+                })
+              }
+            />
+            <Button
+              title="Pay invoice"
+              icon="fas fa-file-invoice-dollar"
+              onClick={() => navigate("/transferency")}
+            />
           </div>
           <div className="w-full">
             <ul className="cc-horizontal-nav">

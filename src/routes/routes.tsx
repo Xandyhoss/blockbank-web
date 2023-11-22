@@ -11,6 +11,7 @@ import CreditCardCreate from "../pages/CreditCardCreate";
 import MakeDeposit from "../pages/MakeDeposit";
 import MakeWithdrawal from "../pages/MakeWithdrawal";
 import CreateTransferency from "../pages/CreateTransferency";
+import CreateCreditCardPurchase from "../pages/CreateCreditCardPurchase";
 
 export type IRoute = RouteObject & {
   authorizedRoles?: string[];
@@ -67,6 +68,12 @@ export const Routes: IRoute[] = [
             path: "create",
             name: "Create Manager",
             element: <CreditCardCreate />,
+            authorizedRoles: ["holder"],
+          },
+          {
+            path: "create-purchase",
+            name: "Create Purchase",
+            element: <CreateCreditCardPurchase />,
             authorizedRoles: ["holder"],
           },
         ],

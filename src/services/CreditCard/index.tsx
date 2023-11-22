@@ -37,3 +37,12 @@ export const getCreditCardPaymentsByCreditCardKey = async (
   return response;
 };
 
+export const createNewCreditCardPurchase = async (
+  payload: CreateCreditCardPurchasePayload
+) => {
+  const response = await requestAPI<
+    CreditCardPurchase,
+    CreateCreditCardPurchasePayload
+  >("/creditcard/createPurchase", "post", payload);
+  return response;
+};
