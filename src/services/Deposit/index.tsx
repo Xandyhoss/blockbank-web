@@ -10,3 +10,12 @@ export const getDepositByHolderKey = async (
   );
   return response;
 };
+
+export const createNewDeposit = async (payload: MakeDepositPayload) => {
+  const response = await requestAPI<Deposit, MakeDepositPayload>(
+    "/holder/deposit",
+    "post",
+    payload
+  );
+  return response;
+};

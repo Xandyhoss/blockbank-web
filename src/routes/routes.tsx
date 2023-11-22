@@ -8,11 +8,14 @@ import HolderCreate from "../pages/HolderCreate";
 import ManagerCreate from "../pages/ManagerCreate";
 import CreditCard from "../pages/CreditCard";
 import CreditCardCreate from "../pages/CreditCardCreate";
+import MakeDeposit from "../pages/MakeDeposit";
+import MakeWithdrawal from "../pages/MakeWithdrawal";
 
 export type IRoute = RouteObject & {
   authorizedRoles?: string[];
   children?: IRoute[];
   name: string;
+  hidden?: boolean;
 };
 
 export const Routes: IRoute[] = [
@@ -26,6 +29,21 @@ export const Routes: IRoute[] = [
         name: "Home",
         element: <Panel />,
         authorizedRoles: ["holder", "manager"],
+      },
+      {
+        path: "/deposit",
+        name: "Deposit",
+        element: <MakeDeposit />,
+        hidden: true,
+        authorizedRoles: ["holder"],
+      },
+
+      {
+        path: "/withdrawal",
+        name: "Withdrawal",
+        element: <MakeWithdrawal />,
+        hidden: true,
+        authorizedRoles: ["holder"],
       },
       {
         path: "/creditCard",

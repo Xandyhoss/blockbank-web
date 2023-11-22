@@ -1,9 +1,13 @@
 interface Withdrawal {
   "@assetType": "withdrawal";
-  '@key': string,
+  "@key": string;
   date: string;
   holder: Holder;
   txId: string;
+  value: number;
+}
+
+interface MakeWithdrawalPayload {
   value: number;
 }
 

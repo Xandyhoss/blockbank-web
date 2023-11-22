@@ -15,8 +15,10 @@ const Home: React.FC = () => {
     const routes = Routes;
     const mainRoute = routes.filter((route) => route.path === "/")[0];
     const childrenRoutes = mainRoute.children as IRoute[];
-    const filteredRoutes = childrenRoutes?.filter((route) =>
-      route.authorizedRoles?.includes(getUserRole(user?.account_type))
+    const filteredRoutes = childrenRoutes?.filter(
+      (route) =>
+        route.authorizedRoles?.includes(getUserRole(user?.account_type)) &&
+        !route.hidden
     );
     return filteredRoutes;
   };

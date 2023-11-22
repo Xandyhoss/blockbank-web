@@ -15,6 +15,7 @@ import { getPurchasesByHolderKey } from "../../services/Purchases";
 import EmptyMessage from "../../components/EmptyMessage";
 import { getCreditCardByHolderKey } from "../../services/CreditCard";
 import { useNavigate } from "react-router-dom";
+import Button from "../../components/Button";
 
 const OperationType = new Map<string, string>([
   ["transferency", "Transferency"],
@@ -305,7 +306,11 @@ const HolderPanel: React.FC = () => {
           <p className="card-value">R$ {holder.cash.toLocaleString()}</p>
         </div>
         {creditCard && (
-          <div className="card cursor-pointer" onClick={() => navigate("/creditCard/")}>
+          <div
+            className="card cursor-pointer
+          hover:bg-slate-200 transition-all"
+            onClick={() => navigate("/creditCard/")}
+          >
             <p className="card-title">Credit Card</p>
             <div className="flex flex-col">
               <p className="card-value !text-green-600 !text-sm">
@@ -317,6 +322,19 @@ const HolderPanel: React.FC = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className="w-full flex gap-2 justify-end">
+        <Button
+          title="Deposit"
+          icon="fas fa-down-long"
+          onClick={() => navigate("/deposit")}
+        />
+        <Button
+          title="Withdrawal"
+          icon="fas fa-up-long"
+          onClick={() => navigate("/withdrawal")}
+        />
+        <Button title="Transfer" icon="fas fa-money-bill-transfer" />
       </div>
       <div className="w-full">
         <ul className="horizontal-nav">

@@ -7,6 +7,10 @@ interface Deposit {
   value: value;
 }
 
+interface MakeDepositPayload {
+  value: number;
+}
+
 interface GetDepositsByHolderKey {
   holderKey: string;
 }
