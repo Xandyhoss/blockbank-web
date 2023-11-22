@@ -10,6 +10,7 @@ import CreditCard from "../pages/CreditCard";
 import CreditCardCreate from "../pages/CreditCardCreate";
 import MakeDeposit from "../pages/MakeDeposit";
 import MakeWithdrawal from "../pages/MakeWithdrawal";
+import CreateTransferency from "../pages/CreateTransferency";
 
 export type IRoute = RouteObject & {
   authorizedRoles?: string[];
@@ -37,7 +38,13 @@ export const Routes: IRoute[] = [
         hidden: true,
         authorizedRoles: ["holder"],
       },
-
+      {
+        path: "/transferency",
+        name: "Trasnferency",
+        element: <CreateTransferency />,
+        hidden: true,
+        authorizedRoles: ["holder"],
+      },
       {
         path: "/withdrawal",
         name: "Withdrawal",

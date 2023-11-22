@@ -7,6 +7,12 @@ interface Transfer {
   txId: string;
   value: number;
 }
+
+interface MakeTransferPayload {
+  receiverKey: string;
+  value: number;
+}
+
 interface GetTransfersByHolderKey {
   holderKey: string;
   sent: boolean;

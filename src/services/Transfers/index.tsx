@@ -10,3 +10,12 @@ export const getTransfersByHolderKey = async (
   );
   return response;
 };
+
+export const createNewTransferency = async (payload: MakeTransferPayload) => {
+  const response = await requestAPI<Transfer, MakeTransferPayload>(
+    "/holder/transferency",
+    "post",
+    payload
+  );
+  return response;
+};

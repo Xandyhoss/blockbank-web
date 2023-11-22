@@ -196,7 +196,7 @@ const HolderPanel: React.FC = () => {
                       transferency.receiver["@key"] === user?.holder_key,
                   })}
                 >
-                  R$ {(transferency.value as number).toFixed().toLocaleString()}
+                  R$ {(transferency.value as number).toLocaleString()}
                 </p>
               </div>
             );
@@ -334,7 +334,11 @@ const HolderPanel: React.FC = () => {
           icon="fas fa-up-long"
           onClick={() => navigate("/withdrawal")}
         />
-        <Button title="Transfer" icon="fas fa-money-bill-transfer" />
+        <Button
+          title="Transfer"
+          icon="fas fa-money-bill-transfer"
+          onClick={() => navigate("/transferency")}
+        />
       </div>
       <div className="w-full">
         <ul className="horizontal-nav">
