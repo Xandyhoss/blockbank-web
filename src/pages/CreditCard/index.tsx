@@ -37,6 +37,8 @@ const CreditCard: React.FC = () => {
     CreditCardPayment[]
   >([]);
 
+  const [selectedItem, setSelectedItem] = useState("all");
+
   const copyToClipboard = () => {
     navigator.clipboard.writeText(creditCard?.["@key"] as string);
     document.getElementById("cc-copy-button")?.classList.add("cc-copied");
@@ -160,7 +162,9 @@ const CreditCard: React.FC = () => {
             return (
               <div className="history-item" key={idx}>
                 <div className="flex gap-2">
-                  <i className={classNames("fas fa-arrow-down text-green-500")} />
+                  <i
+                    className={classNames("fas fa-arrow-down text-green-500")}
+                  />
                   <p className="font-bold text-sm">Payment</p>
                 </div>
                 <p className="justify-self-center">
@@ -263,8 +267,44 @@ const CreditCard: React.FC = () => {
               </div>
             </div>
           </div>
+          <div className="w-full">
+            <ul className="cc-horizontal-nav">
+              <li
+                onClick={() => setSelectedItem("all")}
+                className={classNames("cc-horizontal-nav-item", {
+                  "selected-item": selectedItem === "all",
+                })}
+              >
+                All
+              </li>
+              <li
+                onClick={() => setSelectedItem("purchases")}
+                className={classNames("cc-horizontal-nav-item", {
+                  "selected-item": selectedItem === "purchases",
+                })}
+              >
+                Purchases
+              </li>
+              <li
+                onClick={() => setSelectedItem("payments")}
+                className={classNames("cc-horizontal-nav-item", {
+                  "selected-item": selectedItem === "payments",
+                })}
+              >
+                Payments
+              </li>
+            </ul>
+          </div>
           <div className="w-full flex flex-col gap-1">
-            {renderItems([...creditCardPurchases, ...creditCardPayments] || [])}
+            {renderItems(
+              (selectedItem === "all" && [
+                ...creditCardPurchases,
+                ...creditCardPayments,
+              ]) ||
+                (selectedItem === "purchases" && [...creditCardPurchases]) ||
+                (selectedItem === "payments" && [...creditCardPayments]) ||
+                []
+            )}
           </div>
         </>
       )}

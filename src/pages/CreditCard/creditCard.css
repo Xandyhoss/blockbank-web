@@ -31,3 +31,13 @@
   @apply w-full h-auto bg-slate-100 rounded-lg flex
           flex-col justify-between p-2;
 }
+
+
+.cc-horizontal-nav {
+  @apply flex bg-slate-100 justify-center flex-wrap md:flex-auto;
+}
+
+.cc-horizontal-nav-item {
+  @apply hover:bg-slate-200 p-3 transition-all
+    hover:scale-[1.05] text-sm md:text-base hover:text-black cursor-pointer;
+}
