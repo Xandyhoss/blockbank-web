@@ -28,6 +28,11 @@ interface CreditCardPayment {
   value: number;
 }
 
+interface PayInvoicePayload {
+  creditCardKey: string;
+  value: number;
+}
+
 interface CreateCreditCardPurchasePayload {
   creditCardKey: string;
   description: string;

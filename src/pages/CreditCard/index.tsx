@@ -285,7 +285,13 @@ const CreditCard: React.FC = () => {
             <Button
               title="Pay invoice"
               icon="fas fa-file-invoice-dollar"
-              onClick={() => navigate("/transferency")}
+              onClick={() =>
+                navigate("/creditcard/pay-invoice", {
+                  state: {
+                    creditCardKey: creditCard["@key"],
+                  },
+                })
+              }
             />
           </div>
           <div className="w-full">

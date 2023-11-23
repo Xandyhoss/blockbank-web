@@ -57,3 +57,12 @@ export const activateCreditCard = async (
   );
   return response;
 };
+
+export const payCreditCardInvoice = async (payload: PayInvoicePayload) => {
+  const response = await requestAPI<CreditCardPayment, PayInvoicePayload>(
+    "creditcard/payInvoice",
+    "post",
+    payload
+  );
+  return response;
+};
