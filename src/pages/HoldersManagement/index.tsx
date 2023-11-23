@@ -52,7 +52,10 @@ const HoldersManagement: React.FC = () => {
             <div className="flex gap-2">
               <p className="text-sm">{holder["@key"]}</p>
             </div>
-            <div className="flex gap-2">
+            <div
+              className="flex gap-2"
+              onClick={() => navigate(`/holders/manage/${holder["@key"]}`)}
+            >
               <i className="fas fa-right-to-bracket holder-management-icon" />
             </div>
           </div>

@@ -46,3 +46,14 @@ export const createNewCreditCardPurchase = async (
   >("/creditcard/createPurchase", "post", payload);
   return response;
 };
+
+export const activateCreditCard = async (
+  payload: ActivateCreditCardPayload
+) => {
+  const response = await requestAPI<CreditCard, ActivateCreditCardPayload>(
+    "/creditcard/activate",
+    "post",
+    payload
+  );
+  return response;
+};

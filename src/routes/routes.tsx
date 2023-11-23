@@ -12,6 +12,7 @@ import MakeDeposit from "../pages/MakeDeposit";
 import MakeWithdrawal from "../pages/MakeWithdrawal";
 import CreateTransferency from "../pages/CreateTransferency";
 import CreateCreditCardPurchase from "../pages/CreateCreditCardPurchase";
+import ManageHolder from "../pages/ManageHolder";
 
 export type IRoute = RouteObject & {
   authorizedRoles?: string[];
@@ -112,6 +113,12 @@ export const Routes: IRoute[] = [
             path: "create",
             name: "Create Holder",
             element: <HolderCreate />,
+            authorizedRoles: ["manager"],
+          },
+          {
+            path: "manage/:key",
+            name: "Manage holder",
+            element: <ManageHolder />,
             authorizedRoles: ["manager"],
           },
         ],

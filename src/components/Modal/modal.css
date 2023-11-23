@@ -1,0 +1,13 @@
+.modal-overlay {
+  @apply absolute top-0 left-0 w-screen h-screen
+  bg-black z-20 bg-opacity-70 flex justify-center items-center;
+}
+
+.modal-card-wrapper {
+  @apply bg-white min-w-[50%] h-44 min-h-[30%] 
+  rounded-md p-4;
+}
+
+.modal-card-content {
+  @apply w-full h-full flex flex-col relative;
+}

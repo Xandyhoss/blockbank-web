@@ -37,3 +37,7 @@ interface CreateCreditCardPurchasePayload {
 interface CreateCreditCardPayload {
   creditCardName: string;
 }
+
+interface ActivateCreditCardPayload {
+  holderKey: string;
+}
