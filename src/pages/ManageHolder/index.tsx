@@ -126,9 +126,10 @@ const ManageHolder: React.FC = () => {
     });
     if (response) {
       setActivateCardModal(false);
+      getHolder();
       return;
     }
-  }, [holderKey]);
+  }, [getHolder, holderKey]);
 
   if (localLoading || !holder) {
     return <Loading />;
@@ -184,22 +185,24 @@ const ManageHolder: React.FC = () => {
         <div className="w-full flex flex-col gap-4 mt-4">
           <div className="flex justify-between">
             <p className="text-xl">Credit Card</p>
-            <div>
-              <Button
-                title="Update limit"
-                icon={"fas fa-plus"}
-                variant="secondary"
-                className="!h-8"
-                onClick={() =>
-                  navigate(`/creditCard/update-limit`, {
-                    state: {
-                      creditCardKey: creditCard?.["@key"],
-                      holderKey: holder["@key"],
-                    },
-                  })
-                }
-              />
-            </div>
+            {creditCard && (
+              <div>
+                <Button
+                  title="Update limit"
+                  icon={"fas fa-plus"}
+                  variant="secondary"
+                  className="!h-8"
+                  onClick={() =>
+                    navigate(`/creditCard/update-limit`, {
+                      state: {
+                        creditCardKey: creditCard?.["@key"],
+                        holderKey: holder["@key"],
+                      },
+                    })
+                  }
+                />
+              </div>
+            )}
           </div>
           {!holder.ccAvailable && (
             <div className="flex flex-col flex-wrap gap-3">
@@ -231,9 +234,11 @@ const ManageHolder: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className="flex flex-col flex-wrap gap-3">
-              <p>This holder didn't create a credit card yet.</p>
-            </div>
+            holder.ccAvailable && (
+              <div className="flex flex-col flex-wrap gap-3">
+                <p>This holder didn't create a credit card yet.</p>
+              </div>
+            )
           )}
         </div>
       </div>
