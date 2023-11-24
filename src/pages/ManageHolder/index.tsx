@@ -182,8 +182,24 @@ const ManageHolder: React.FC = () => {
           </div>
         </div>
         <div className="w-full flex flex-col gap-4 mt-4">
-          <div className="flex flex-col">
+          <div className="flex justify-between">
             <p className="text-xl">Credit Card</p>
+            <div>
+              <Button
+                title="Update limit"
+                icon={"fas fa-plus"}
+                variant="secondary"
+                className="!h-8"
+                onClick={() =>
+                  navigate(`/creditCard/update-limit`, {
+                    state: {
+                      creditCardKey: creditCard?.["@key"],
+                      holderKey: holder["@key"],
+                    },
+                  })
+                }
+              />
+            </div>
           </div>
           {!holder.ccAvailable && (
             <div className="flex flex-col flex-wrap gap-3">

@@ -14,6 +14,7 @@ import CreateTransferency from "../pages/CreateTransferency";
 import CreateCreditCardPurchase from "../pages/CreateCreditCardPurchase";
 import ManageHolder from "../pages/ManageHolder";
 import PayInvoice from "../pages/PayInvoice";
+import UpdateCreditCardLimit from "../pages/UpdateCreditCardLimit";
 
 export type IRoute = RouteObject & {
   authorizedRoles?: string[];
@@ -83,6 +84,12 @@ export const Routes: IRoute[] = [
             name: "Pay invoice",
             element: <PayInvoice />,
             authorizedRoles: ["holder"],
+          },
+          {
+            path: "update-limit",
+            name: "Update Limit",
+            element: <UpdateCreditCardLimit />,
+            authorizedRoles: ["manager"],
           },
         ],
       },

@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type="button"
-      className={classNames("button", variant, className, { submitting })}
+      className={classNames("button", variant, { submitting }, className)}
       disabled={submitting}
       {...rest}
     >

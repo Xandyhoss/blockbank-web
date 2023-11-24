@@ -66,3 +66,14 @@ export const payCreditCardInvoice = async (payload: PayInvoicePayload) => {
   );
   return response;
 };
+
+export const updateCreditCardLimit = async (
+  payload: UpdateCreditCardLimitPayload
+) => {
+  const response = await requestAPI<CreditCard, UpdateCreditCardLimitPayload>(
+    "/creditcard/updateLimit",
+    "post",
+    payload
+  );
+  return response;
+};

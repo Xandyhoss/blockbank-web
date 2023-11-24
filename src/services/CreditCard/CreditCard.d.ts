@@ -28,6 +28,11 @@ interface CreditCardPayment {
   value: number;
 }
 
+interface UpdateCreditCardLimitPayload {
+  creditCardKey: string;
+  value: number;
+}
+
 interface PayInvoicePayload {
   creditCardKey: string;
   value: number;
