@@ -15,6 +15,7 @@ import CreateCreditCardPurchase from "../pages/CreateCreditCardPurchase";
 import ManageHolder from "../pages/ManageHolder";
 import PayInvoice from "../pages/PayInvoice";
 import UpdateCreditCardLimit from "../pages/UpdateCreditCardLimit";
+import UpdateCreditCardName from "../pages/UpdateCreditCardName";
 
 export type IRoute = RouteObject & {
   authorizedRoles?: string[];
@@ -90,6 +91,12 @@ export const Routes: IRoute[] = [
             name: "Update Limit",
             element: <UpdateCreditCardLimit />,
             authorizedRoles: ["manager"],
+          },
+          {
+            path: "update-name",
+            name: "Update Name",
+            element: <UpdateCreditCardName />,
+            authorizedRoles: ["holder"],
           },
         ],
       },

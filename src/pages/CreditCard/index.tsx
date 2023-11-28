@@ -293,6 +293,16 @@ const CreditCard: React.FC = () => {
                 })
               }
             />
+            <Button
+              title="Change card name"
+              icon="fas fa-arrows-spin"
+              variant="secondary"
+              onClick={() =>
+                navigate("/creditCard/update-name", {
+                  state: { creditCardKey: creditCard["@key"] },
+                })
+              }
+            />
           </div>
           <div className="w-full">
             <ul className="cc-horizontal-nav">

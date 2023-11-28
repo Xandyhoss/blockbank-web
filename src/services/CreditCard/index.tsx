@@ -77,3 +77,14 @@ export const updateCreditCardLimit = async (
   );
   return response;
 };
+
+export const updateCreditCardName = async (
+  payload: UpdateCreditCardNamePayload
+) => {
+  const response = await requestAPI<CreditCard, UpdateCreditCardNamePayload>(
+    "/creditcard/updateName/",
+    "post",
+    payload
+  );
+  return response;
+};
