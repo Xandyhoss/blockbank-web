@@ -1,3 +1,4 @@
+import { toastEmmiter } from "../../utils/toastEmitter";
 import requestAPI from "../api";
 
 export const createCreditCard = async (payload: CreateCreditCardPayload) => {
@@ -6,6 +7,9 @@ export const createCreditCard = async (payload: CreateCreditCardPayload) => {
     "post",
     payload
   );
+  if (response) {
+    toastEmmiter("Credit card created!", "success");
+  }
   return response;
 };
 
@@ -44,6 +48,9 @@ export const createNewCreditCardPurchase = async (
     CreditCardPurchase,
     CreateCreditCardPurchasePayload
   >("/creditcard/createPurchase", "post", payload);
+  if (response) {
+    toastEmmiter("Credit card purchase created!", "success");
+  }
   return response;
 };
 
@@ -55,6 +62,9 @@ export const activateCreditCard = async (
     "post",
     payload
   );
+  if (response) {
+    toastEmmiter("Credit card activated!", "success");
+  }
   return response;
 };
 
@@ -64,6 +74,9 @@ export const payCreditCardInvoice = async (payload: PayInvoicePayload) => {
     "post",
     payload
   );
+  if (response) {
+    toastEmmiter("Credit card invoice paid!", "success");
+  }
   return response;
 };
 
@@ -75,6 +88,9 @@ export const updateCreditCardLimit = async (
     "post",
     payload
   );
+  if (response) {
+    toastEmmiter("Credit card limit updated!", "success");
+  }
   return response;
 };
 
@@ -86,5 +102,8 @@ export const updateCreditCardName = async (
     "post",
     payload
   );
+  if (response) {
+    toastEmmiter("Credit card name updated!", "success");
+  }
   return response;
 };
