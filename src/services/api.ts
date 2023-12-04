@@ -1,4 +1,5 @@
 import axios, { isAxiosError } from "axios";
+import { toastEmmiter } from "../utils/toastEmitter";
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_HOST_URL,
@@ -16,6 +17,9 @@ const requestAPI = async <R, P = void>(
   } catch (error) {
     if (isAxiosError(error)) {
       console.log(error);
+      if (url !== "/auth/") {
+        toastEmmiter(error.message, "error");
+      }
     }
   }
 };

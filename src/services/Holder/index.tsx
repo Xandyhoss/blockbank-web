@@ -1,3 +1,4 @@
+import { toastEmmiter } from "../../utils/toastEmitter";
 import requestAPI from "../api";
 
 export const getHolders = async () => {
@@ -16,5 +17,8 @@ export const createHolder = async (payload: CreateHolderPayload) => {
     "post",
     payload
   );
+  if (response) {
+    toastEmmiter("Holder created!", "success");
+  }
   return response;
 };
