@@ -5,7 +5,8 @@ export const createCreditCard = async (payload: CreateCreditCardPayload) => {
   const response = await requestAPI<CreditCard, CreateCreditCardPayload>(
     "/creditcard/create",
     "post",
-    payload
+    payload,
+    true
   );
   if (response) {
     toastEmmiter("Credit card created!", "success");
@@ -47,7 +48,7 @@ export const createNewCreditCardPurchase = async (
   const response = await requestAPI<
     CreditCardPurchase,
     CreateCreditCardPurchasePayload
-  >("/creditcard/createPurchase", "post", payload);
+  >("/creditcard/createPurchase", "post", payload, true);
   if (response) {
     toastEmmiter("Credit card purchase created!", "success");
   }
@@ -60,7 +61,8 @@ export const activateCreditCard = async (
   const response = await requestAPI<CreditCard, ActivateCreditCardPayload>(
     "/creditcard/activate",
     "post",
-    payload
+    payload,
+    true
   );
   if (response) {
     toastEmmiter("Credit card activated!", "success");
@@ -72,7 +74,8 @@ export const payCreditCardInvoice = async (payload: PayInvoicePayload) => {
   const response = await requestAPI<CreditCardPayment, PayInvoicePayload>(
     "creditcard/payInvoice",
     "post",
-    payload
+    payload,
+    true
   );
   if (response) {
     toastEmmiter("Credit card invoice paid!", "success");
@@ -86,7 +89,8 @@ export const updateCreditCardLimit = async (
   const response = await requestAPI<CreditCard, UpdateCreditCardLimitPayload>(
     "/creditcard/updateLimit",
     "post",
-    payload
+    payload,
+    true
   );
   if (response) {
     toastEmmiter("Credit card limit updated!", "success");
@@ -100,7 +104,8 @@ export const updateCreditCardName = async (
   const response = await requestAPI<CreditCard, UpdateCreditCardNamePayload>(
     "/creditcard/updateName/",
     "post",
-    payload
+    payload,
+    true
   );
   if (response) {
     toastEmmiter("Credit card name updated!", "success");

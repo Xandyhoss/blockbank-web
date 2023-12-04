@@ -1,3 +1,4 @@
+import { toastEmmiter } from "../../utils/toastEmitter";
 import requestAPI from "../api";
 
 export const getDepositByHolderKey = async (
@@ -15,7 +16,11 @@ export const createNewDeposit = async (payload: MakeDepositPayload) => {
   const response = await requestAPI<Deposit, MakeDepositPayload>(
     "/holder/deposit",
     "post",
-    payload
+    payload,
+    true
   );
+  if (response) {
+    toastEmmiter("Deposit created!", "success");
+  }
   return response;
 };

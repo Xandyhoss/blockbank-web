@@ -16,6 +16,7 @@ import ManageHolder from "../pages/ManageHolder";
 import PayInvoice from "../pages/PayInvoice";
 import UpdateCreditCardLimit from "../pages/UpdateCreditCardLimit";
 import UpdateCreditCardName from "../pages/UpdateCreditCardName";
+import MakePurchase from "../pages/MakePurchase";
 
 export type IRoute = RouteObject & {
   authorizedRoles?: string[];
@@ -54,6 +55,13 @@ export const Routes: IRoute[] = [
         path: "/withdrawal",
         name: "Withdrawal",
         element: <MakeWithdrawal />,
+        hidden: true,
+        authorizedRoles: ["holder"],
+      },
+      {
+        path: "/purchase",
+        name: "Purchase",
+        element: <MakePurchase />,
         hidden: true,
         authorizedRoles: ["holder"],
       },

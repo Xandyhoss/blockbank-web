@@ -339,6 +339,11 @@ const HolderPanel: React.FC = () => {
           icon="fas fa-money-bill-transfer"
           onClick={() => navigate("/transferency")}
         />
+        <Button
+          title="Purchase"
+          icon="fas fa-dollar-sign"
+          onClick={() => navigate("/purchase")}
+        />
       </div>
       <div className="w-full">
         <ul className="horizontal-nav">

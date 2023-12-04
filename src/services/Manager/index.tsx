@@ -1,3 +1,4 @@
+import { toastEmmiter } from "../../utils/toastEmitter";
 import requestAPI from "../api";
 
 export const getManagers = async () => {
@@ -9,7 +10,11 @@ export const createManager = async (payload: CreateManagerPayload) => {
   const response = await requestAPI<Manager, CreateManagerPayload>(
     "/manager/create",
     "post",
-    payload
+    payload,
+    true
   );
+  if (response) {
+    toastEmmiter("Manager created!", "success");
+  }
   return response;
 };

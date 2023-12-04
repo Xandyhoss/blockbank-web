@@ -9,7 +9,8 @@ const api = axios.create({
 const requestAPI = async <R, P = void>(
   url: string,
   method: string,
-  payload?: P
+  payload?: P,
+  emitError?: boolean
 ) => {
   try {
     const response = await api.request<R>({ method, url, data: payload });
@@ -17,7 +18,7 @@ const requestAPI = async <R, P = void>(
   } catch (error) {
     if (isAxiosError(error)) {
       console.log(error);
-      if (url !== "/auth/") {
+      if (emitError) {
         toastEmmiter(error.message, "error");
       }
     }

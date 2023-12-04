@@ -11,3 +11,8 @@ interface Purchase {
 interface GetPurchasesByHolderKey {
   holderKey: string;
 }
+
+interface CreatePurchasePayload {
+  description: string;
+  value: number;
+}
