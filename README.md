@@ -1,6 +1,6 @@
 # BlockBank
 
-[![GitHub Stars](https://img.shields.io/github/stars/Xandyhoss/albion-player-search)](https://github.com/Xandyhoss/albion-player-search/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/Xandyhoss/albion-player-search)](https://github.com/Xandyhoss/albion-player-search/issues)[![Live Demo](https://img.shields.io/badge/live-demo-green)](https://albionplayersearch.vercel.app/)
+[![GitHub Stars](https://img.shields.io/github/stars/Xandyhoss/blockbank-web)](https://github.com/Xandyhoss/blockbank-web/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/Xandyhoss/albion-player-search)](https://github.com/Xandyhoss/blockbank-web/issues)
 
 This is a personal project made using ReactJS, AdonisJS and CC-Tools. This project is a bank application, with account and credit card basic functions, like transfers, deposits and withdrawals using blockchain as main engine.
 
