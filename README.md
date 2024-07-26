@@ -4,8 +4,7 @@
 
 This is a personal project made using ReactJS, AdonisJS and CC-Tools. This project is a bank application, with account and credit card basic functions, like transfers, deposits and withdrawals using blockchain as main engine.
 
-![App Preview](https://i.imgur.com/IrhMkSa.png)
-![App Preview](https://i.imgur.com/WMMp5SP.png)
+![App Preview](https://i.imgur.com/pBkREHb.png)
 
 ---
 
