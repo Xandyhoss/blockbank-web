@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# BlockBank
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![GitHub Stars](https://img.shields.io/github/stars/Xandyhoss/albion-player-search)](https://github.com/Xandyhoss/albion-player-search/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/Xandyhoss/albion-player-search)](https://github.com/Xandyhoss/albion-player-search/issues)[![Live Demo](https://img.shields.io/badge/live-demo-green)](https://albionplayersearch.vercel.app/)
 
-Currently, two official plugins are available:
+This is a personal project made using ReactJS, AdonisJS and CC-Tools. This project is a bank application, with account and credit card basic functions, like transfers, deposits and withdrawals using blockchain as main engine.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![App Preview](https://i.imgur.com/IrhMkSa.png)
+![App Preview](https://i.imgur.com/WMMp5SP.png)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Stack
 
-- Configure the top-level `parserOptions` property like this:
+- ReactJS
+- AdonisJS
+- CC-Tools(Hyperledger Fabric)
+- Tailwind CSS
+- React Hook Form
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+---
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Setup
+
+To run this project, first you need to clone and run the CC and API repos:
+([BlockBank API](https://github.com/Xandyhoss/blockbank-api)).
+([BlockBank CC](https://github.com/Xandyhoss/blockbank-api)).
+
+After setup the CC and API, clone this repo, then run `npm install` to install the dependencies, then `npm run dev` to start the development server.
+
+---
